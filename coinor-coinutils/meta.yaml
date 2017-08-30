@@ -1,0 +1,19 @@
+{% set version = "2.10.14" %}
+
+package:
+    name: coinor-coinutils
+    version: !!str {{ version }}
+
+source:
+    fn: CoinUtils-{{ version }}.tgz
+    url: https://www.coin-or.org/download/source/CoinUtils/CoinUtils-{{ version }}.tgz
+    sha256: 85a99b70b0271c0409c2b10299529ffa1623b176ee0ba1567c46d7fc17371628
+
+build:
+    number: 0
+
+test:
+    commands:
+        - test -f ${PREFIX}/lib/libCoinUtils.so # [linux]
+
+

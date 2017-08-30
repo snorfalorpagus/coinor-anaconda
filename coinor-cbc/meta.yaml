@@ -1,0 +1,29 @@
+{% set version = "2.9.9" %}
+
+package:
+    name: coinor-cbc
+    version: !!str {{ version }}
+
+source:
+    fn: Cbc-{{ version }}.tgz
+    url: https://www.coin-or.org/download/source/Cbc/Cbc-{{ version }}.tgz
+    sha256: aa8404e49b25853b30ebd6291e3beedc9b5f583e3c0c36822fae17507feb0af1    
+
+build:
+    number: 0
+
+requirements:
+    build:
+        - coinor-coinutils
+        - coinor-clp
+
+    run:
+        - coinor-coinutils
+        - coinor-clp
+
+test:
+    commands:
+        - test -f ${PREFIX}/lib/libCbcSolver.so # [linux]
+        - test -f ${PREFIX}/include/coin/CbcModel.hpp # [linux]
+
+
