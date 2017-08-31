@@ -12,15 +12,6 @@ source:
 build:
     number: 0
 
-requirements:
-    build:
-        - coinor-coinutils
-        - coinor-clp
-
-    run:
-        - coinor-coinutils
-        - coinor-clp
-
 test:
     commands:
         - test -f ${PREFIX}/lib/libCbcSolver.so # [linux]
